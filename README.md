@@ -1,14 +1,30 @@
-# gmickel-skill
+# better-skill-builder
 
 > Build Agent Skills for Claude Code, Codex, Amp, and OpenCode.
 
 A skill that teaches you, an AI agent, how to help users build skills. Meta, but useful.
 
+## Why "Better"?
+
+Anthropic's [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) is comprehensive but theoretical. This skill is battle-tested.
+
+| | skill-creator | better-skill-builder |
+|---|---------------|----------------------|
+| **Clients** | Claude Code only | Claude Code, Codex, Amp, OpenCode |
+| **Examples** | Theoretical patterns | 5 production skills |
+| **SKILL.md** | ~3000 words | ~230 lines |
+| **Distribution** | .skill files only | git clone, CLI install, plugin, --skill flag |
+| **Auth patterns** | Not covered | Environment variables, OAuth |
+| **Safety patterns** | Brief mention | Draft-first, dry-run, confirmation gates |
+| **CLI integration** | Not covered | `skill install --target` pattern |
+
+**This skill teaches from real code, not theory.**
+
 **Official docs:** [agentskills.io](https://agentskills.io)
 
 ---
 
-## Skills I've Built
+## Production Skills
 
 ### GNO - Local Knowledge Engine
 
@@ -133,6 +149,7 @@ description: >
 | Topic | File |
 |-------|------|
 | SKILL.md format | [SKILL.md](SKILL.md) |
+| Adding scripts | [references/scripts.md](references/scripts.md) |
 | Design patterns | [references/patterns.md](references/patterns.md) |
 | Plugin structure | [references/plugin-structure.md](references/plugin-structure.md) |
 | Real examples | [references/real-examples.md](references/real-examples.md) |
@@ -176,6 +193,7 @@ Then ask: "How do I create an Agent Skill?"
 
 - [agentskills.io/specification](https://agentskills.io/specification) - Official spec
 - [agentskills.io/integrate-skills](https://agentskills.io/integrate-skills) - Client integration
+- [anthropics/skills](https://github.com/anthropics/skills) - Official examples
 
 ## License
 

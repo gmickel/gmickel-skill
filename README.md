@@ -2,7 +2,7 @@
 
 > Build Agent Skills for Claude Code, Codex, Amp, and OpenCode.
 
-This repo teaches you how to create skills, with real production examples.
+A skill that teaches AI agents how to help users build skills. Meta, but useful.
 
 **Official docs:** [agentskills.io](https://agentskills.io)
 

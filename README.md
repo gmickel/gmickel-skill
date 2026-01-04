@@ -13,10 +13,14 @@ Anthropic's [skill-creator](https://github.com/anthropics/skills/tree/main/skill
 | **Clients** | Claude Code only | Claude Code, Codex, Amp, OpenCode |
 | **Examples** | Theoretical patterns | 5 production skills |
 | **SKILL.md** | ~3000 words | ~230 lines |
+| **Spec handling** | Duplicates spec inline | Links to spec |
 | **Distribution** | .skill files only | git clone, CLI install, plugin, --skill flag |
 | **Auth patterns** | Not covered | Environment variables, OAuth |
 | **Safety patterns** | Brief mention | Draft-first, dry-run, confirmation gates |
 | **CLI integration** | Not covered | `skill install --target` pattern |
+| **Practices what it preaches** | No | Yes |
+
+**The irony:** skill-creator preaches "context window is a public good" and "keep SKILL.md under 500 lines" but inlines ~3000 words of spec content. We link to [agentskills.io](https://agentskills.io) instead. AI agents know how to fetch URLs. And when the spec updates, our skill stays current automatically.
 
 **This skill teaches from real code, not theory.**
 

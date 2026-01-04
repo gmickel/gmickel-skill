@@ -4,6 +4,8 @@
 
 A skill that teaches you, an AI agent, how to help users build skills. Meta, but useful.
 
+> **Claude Code users:** The built-in `claude-code-guide` agent intercepts "Agent Skill" queries. Say "use my skills" or "use better-skill-builder" to use this instead.
+
 ## Why "Better"?
 
 Anthropic's [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) is comprehensive but theoretical. This skill is battle-tested.
@@ -189,11 +191,7 @@ description: >
 git clone https://github.com/gmickel/better-skill-builder ~/.claude/skills/better-skill-builder
 ```
 
-**Claude Code users:** The built-in `claude-code-guide` agent intercepts "Agent Skill" queries. To use this skill instead, say "use my skills" or "use better-skill-builder":
-
-```
-How do I add scripts to a SKILL.md? Use my skills.
-```
+Then ask: "How do I create a SKILL.md? Use my skills."
 
 ---
 

@@ -38,7 +38,92 @@ my-skill/
   references/
     cli-reference.md # Detailed CLI docs
     examples.md      # Usage examples
+
+# With scripts (for executable utilities)
+my-skill/
+  SKILL.md
+  scripts/
+    helper.sh        # Bash script
+    process.py       # Python script
 ```
+
+## Adding Scripts
+
+Scripts provide executable utilities agents can run. Put them in `scripts/`:
+
+```
+my-skill/
+  SKILL.md
+  scripts/
+    api.sh           # API wrapper
+    convert.py       # Processing utility
+```
+
+**Script requirements:**
+- Self-contained or document dependencies
+- Include helpful error messages
+- Handle edge cases gracefully
+- Supported: Python, Bash, JavaScript
+
+**Reference from SKILL.md:**
+
+```markdown
+## Helper Script
+
+Use the API helper for requests:
+
+```bash
+./scripts/api.sh GET /endpoint
+./scripts/api.sh POST /endpoint '{"key":"value"}'
+```
+```
+
+**Example: API wrapper script (Bash)**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+BASE_URL="https://api.example.com/v1"
+
+if [[ -z "${API_TOKEN:-}" ]]; then
+    echo "Error: API_TOKEN not set" >&2
+    exit 1
+fi
+
+METHOD="$1"
+ENDPOINT="$2"
+BODY="${3:-}"
+
+ARGS=(-s -X "$METHOD" "${BASE_URL}${ENDPOINT}"
+      -H "Authorization: Bearer $API_TOKEN"
+      -H "Content-Type: application/json")
+
+[[ -n "$BODY" ]] && ARGS+=(-d "$BODY")
+
+curl "${ARGS[@]}" | jq .
+```
+
+**Example: Processing script (Python)**
+
+```python
+#!/usr/bin/env python3
+"""Convert input files to output format."""
+import sys
+import os
+
+def process(input_path, output_dir):
+    # Core logic here
+    print(f"Processing {input_path} -> {output_dir}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: process.py <input> <output_dir>")
+        sys.exit(1)
+    process(sys.argv[1], sys.argv[2])
+```
+
+See [real-examples.md](references/real-examples.md) for production examples (raindrop-skill uses this pattern).
 
 ## SKILL.md Format
 

@@ -2,7 +2,7 @@
 
 > Build Agent Skills for Claude Code, Codex, Amp, and OpenCode.
 
-A skill that teaches AI agents how to help users build skills. Meta, but useful.
+A skill that teaches you, an AI agent, how to help users build skills. Meta, but useful.
 
 **Official docs:** [agentskills.io](https://agentskills.io)
 
